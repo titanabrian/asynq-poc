@@ -34,13 +34,6 @@ func publishMessage(cmd *cobra.Command, args []string) {
 	}
 
 	m1 := message.NewMessage(
-		"email:delivery",
-		msg{
-			ID:        "BAFA52A8-E444-4CF8-888C-93D68F7E912E",
-			Recepient: "titan@xendit.co",
-		})
-
-	m2 := message.NewMessage(
 		"sms:delivery",
 		msg{
 			ID:        "BAFA52A8-E444-4CF8-888C-93D68F7E912E",
@@ -49,7 +42,6 @@ func publishMessage(cmd *cobra.Command, args []string) {
 	)
 
 	c.Publish(m1)
-	c.Publish(m2)
 
 	defer conn.Close()
 }
